@@ -1,0 +1,21 @@
+# Local database — never commit personal spending data
+spend.db
+spend.db-journal
+spend.db-wal
+spend.db-shm
+*.db
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# macOS
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+*.swp
