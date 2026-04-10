@@ -74,17 +74,20 @@ spend days                                # daily bar chart
 | `spend edit <id>` | `e` | Edit an entry. Flags: `-a`, `-c`, `-n`, `-d` |
 | `spend delete <id>` | `rm` | Delete an entry |
 
-## Currency
+## Configuration
 
-The default currency symbol is `֏` (Armenian dram). To change it, edit the `CURRENCY` constant at the top of `spend.py`:
+Two environment variables:
 
-```python
-CURRENCY = "$"   # or "€", "£", "₽", "¥", whatever
+```bash
+export SPEND_CURRENCY="$"             # default: ֏ (Armenian dram)
+export SPEND_DB="$HOME/Sync/spend.db"  # default: spend.db next to the script
 ```
+
+Use any symbol you want for currency. Use any path for the database — point it at a Syncthing folder, Dropbox, iCloud Drive, whatever, and your spending data follows you across machines.
 
 ## Where the data lives
 
-`~/spend/spend.db` (or wherever you cloned it). It's a single SQLite file. Back it up, sync it with Syncthing, copy it between machines, do whatever you want with it.
+By default, in `spend.db` next to `spend.py`. Override with `SPEND_DB`. It's a single SQLite file — back it up, sync it, copy it between machines, do whatever you want with it.
 
 ## Roadmap
 

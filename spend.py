@@ -10,11 +10,12 @@ import sys
 from datetime import datetime, date, timedelta
 from pathlib import Path
 
-DB_PATH = Path(__file__).parent / "spend.db"
-CURRENCY = "֏"
+DB_PATH = Path(os.environ.get("SPEND_DB") or Path(__file__).parent / "spend.db").expanduser()
+CURRENCY = os.environ.get("SPEND_CURRENCY") or "֏"
 
 
 def get_db():
+    DB_PATH.parent.mkdir(parents=True, exist_ok=True)
     db = sqlite3.connect(DB_PATH)
     db.execute("PRAGMA journal_mode=WAL")
     db.execute("""
