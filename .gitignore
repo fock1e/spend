@@ -19,3 +19,7 @@ venv/
 .vscode/
 .idea/
 *.swp
+
+# Launch / marketing material — kept private until launch day
+LAUNCH.md
+demo.cast
